@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Rifki Auliya Lawfirm | Konsultan & Advokat Profesional</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rifki Auliya Lawfirm - Kantor hukum profesional di Jakarta Selatan. Konsultasi hukum perdata, pidana, bisnis dan korporasi.">
+<meta name="description" content="Rifki Auliya Lawfirm - Kantor hukum profesional di Jakarta Selatan.">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -24,7 +24,6 @@ z-index:999
 .logo{font-weight:800;color:#D4A259;font-size:20px}
 nav{display:flex;gap:25px}
 nav a{color:#fff;text-decoration:none;font-weight:600}
-nav a:hover{color:#D4A259}
 
 /* MOBILE MENU */
 .menu-btn{display:none;font-size:26px;cursor:pointer}
@@ -52,9 +51,8 @@ text-align:center;color:#fff;padding:40px
 background:#D4A259;color:#0D1B2A;
 padding:14px 32px;border-radius:30px;
 text-decoration:none;font-weight:700;
-display:inline-block;transition:.3s
+display:inline-block
 }
-.btn:hover{background:#b78b3f}
 
 /* SECTION */
 section{padding:80px 40px}
@@ -89,23 +87,23 @@ border-radius:8px;border:1px solid #ddd
 footer{background:#0D1B2A;color:#fff;text-align:center;padding:30px}
 
 /* WHATSAPP FLOAT */
-.wa-btn{
-position:fixed;bottom:20px;right:20px;
+.wa-float{
+position:fixed;bottom:80px;right:20px;
 background:#25D366;color:#fff;
-padding:14px 22px;border-radius:50px;
-cursor:pointer;font-weight:700;
+padding:14px 20px;border-radius:50px;
+font-weight:700;cursor:pointer;
 box-shadow:0 5px 20px rgba(0,0,0,.3);
 z-index:999
 }
 
 /* WA POPUP */
 .wa-popup{
-position:fixed;bottom:90px;right:20px;
+position:fixed;bottom:150px;right:20px;
 width:300px;background:#fff;
-border-radius:15px;
+border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,.2);
 padding:20px;display:none;
-animation:fadeIn .4s
+animation:slideUp .4s
 }
 .wa-popup h3{margin-bottom:10px;color:#0D1B2A}
 .wa-popup p{font-size:14px;margin-bottom:15px}
@@ -116,13 +114,25 @@ padding:12px;border-radius:30px;
 text-decoration:none;font-weight:700
 }
 .close-wa{
-position:absolute;top:8px;right:12px;
+position:absolute;top:10px;right:15px;
 cursor:pointer;font-weight:bold
 }
 
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(20px)}
+@keyframes slideUp{
+from{opacity:0;transform:translateY(40px)}
 to{opacity:1;transform:translateY(0)}
+}
+
+/* MOBILE BOTTOM BAR */
+.mobile-bar{
+display:none;
+position:fixed;bottom:0;left:0;width:100%;
+background:#0D1B2A;color:#fff;
+display:flex;justify-content:space-around;
+padding:12px 0;z-index:998
+}
+.mobile-bar a{
+color:#fff;text-decoration:none;font-size:14px
 }
 
 /* RESPONSIVE */
@@ -131,6 +141,7 @@ nav{display:none}
 .menu-btn{display:block}
 .hero h1{font-size:32px}
 section{padding:60px 20px}
+.mobile-bar{display:flex}
 }
 </style>
 </head>
@@ -168,7 +179,7 @@ section{padding:60px 20px}
     <h2>Tentang Kami</h2>
   </div>
   <p style="max-width:800px;margin:auto;text-align:center;">
-    Rifki Auliya Lawfirm merupakan kantor hukum profesional yang memberikan layanan hukum perdata, pidana, bisnis, dan konsultasi hukum dengan mengedepankan integritas, profesionalitas, dan kepuasan klien.
+    Rifki Auliya Lawfirm adalah kantor hukum profesional yang memberikan layanan hukum perdata, pidana, bisnis, dan konsultasi hukum.
   </p>
 </section>
 
@@ -178,22 +189,10 @@ section{padding:60px 20px}
   </div>
 
   <div class="grid">
-    <div class="card" data-aos="fade-up">
-      <h3>Hukum Perdata</h3>
-      <p>Penanganan sengketa perdata, perjanjian, wanprestasi.</p>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <h3>Hukum Pidana</h3>
-      <p>Pendampingan hukum pidana umum dan khusus.</p>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <h3>Hukum Bisnis</h3>
-      <p>Konsultasi legalitas perusahaan dan kontrak bisnis.</p>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <h3>Mediasi</h3>
-      <p>Penyelesaian sengketa secara profesional dan damai.</p>
-    </div>
+    <div class="card" data-aos="fade-up"><h3>Hukum Perdata</h3><p>Sengketa perdata & perjanjian</p></div>
+    <div class="card" data-aos="fade-up"><h3>Hukum Pidana</h3><p>Pendampingan hukum pidana</p></div>
+    <div class="card" data-aos="fade-up"><h3>Hukum Bisnis</h3><p>Legalitas & kontrak bisnis</p></div>
+    <div class="card" data-aos="fade-up"><h3>Mediasi</h3><p>Penyelesaian sengketa damai</p></div>
   </div>
 </section>
 
@@ -220,15 +219,23 @@ section{padding:60px 20px}
   <p>© 2026 Rifki Auliya Lawfirm. All Rights Reserved.</p>
 </footer>
 
-<!-- WHATSAPP BUTTON -->
-<div class="wa-btn" onclick="toggleWA()">💬 Konsultasi WA</div>
+<!-- MOBILE BAR -->
+<div class="mobile-bar">
+  <a href="#home">Home</a>
+  <a href="#services">Layanan</a>
+  <a href="#contact">Kontak</a>
+  <a href="#" onclick="toggleWA()">WA</a>
+</div>
 
-<!-- WHATSAPP POPUP -->
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float" onclick="toggleWA()">💬 Chat WA</div>
+
+<!-- WA POPUP -->
 <div class="wa-popup" id="waPopup">
   <span class="close-wa" onclick="toggleWA()">✖</span>
   <h3>Konsultasi WhatsApp</h3>
-  <p>Hubungi kami sekarang untuk konsultasi hukum cepat dan profesional.</p>
-  <a href="https://wa.me/6281287879621" target="_blank">Chat WhatsApp</a>
+  <p>Hubungi kami untuk konsultasi hukum cepat dan profesional.</p>
+  <a href="https://wa.me/6281287879621" target="_blank">Mulai Chat</a>
 </div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
